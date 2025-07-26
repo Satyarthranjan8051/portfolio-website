@@ -12,7 +12,7 @@ This is a modern, customizable portfolio website built with React, Vite, and Tai
 - 🧩 Easy to customize and extend
 
 ## Demo
-> Add your deployed link here after deployment (e.g. https://your-portfolio.vercel.app)
+> Add your deployed link here after deployment (e.g. [https://your-portfolio.vercel.app](https://portfolio-website-satyarth-ranjans-projects.vercel.app/))
 
 ## Getting Started
 
