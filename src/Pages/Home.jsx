@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const HomePage = () => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen overflow-x-hidden w-full bg-main">
       {/* Header Section */}
       <Header />
 
@@ -14,7 +14,7 @@ const HomePage = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <div className="flex-grow flex bg-main font-mono text-white">
+      <div className="flex-grow flex w-full min-h-screen bg-main font-mono text-white">
         {/* Line numbers - hide on mobile */}
         <div className="hidden sm:block relative w-10 pl-8 mt-11 text-right text-gray-500 select-none">
           {Array.from({ length: 30 }).map((_, index) => (
@@ -26,7 +26,7 @@ const HomePage = () => {
 
         {/* Content Area */}
         <div className="flex-grow flex items-center justify-center w-full">
-          <div className="relative w-full max-w-5xl flex flex-col md:flex-row items-center gap-8 px-4 py-8 md:px-0 md:py-0">
+          <div className="relative w-full flex flex-col md:flex-row items-center gap-8 px-4 py-8 md:px-0 md:py-0">
             {/* Hero section content */}
             <div className="flex flex-col items-center md:items-start justify-center flex-1 px-0 md:px-8 text-center md:text-left">
               <p className="text-base sm:text-lg text-gray-400 mb-2">Hello, I'm</p>
