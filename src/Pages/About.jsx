@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import { useRef, useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const About = () => {
   // Refs for each section
@@ -15,6 +16,8 @@ const About = () => {
   const awardsHeaderRef = useRef(null);
   const [positions, setPositions] = useState([96, 256, 448, 608]);
   const containerRef = useRef(null);
+  const [gifKey, setGifKey] = useState(Date.now());
+  const location = useLocation();
 
   useEffect(() => {
     function updatePositions() {
@@ -38,6 +41,12 @@ const About = () => {
     return () => window.removeEventListener('resize', updatePositions);
   }, []);
 
+  useEffect(() => {
+    if (location.pathname === "/about") {
+      setGifKey(Date.now());
+    }
+  }, [location.pathname]);
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Header Section */}
@@ -47,8 +56,8 @@ const About = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <div className="bg-main flex flex-row min-h-screen font-mono text-white px-2 relative pb-24">
-        <div ref={containerRef} className="relative flex flex-row w-full">
+      <div className="bg-main flex flex-col md:flex-row min-h-screen font-mono text-white px-2 relative pb-24">
+        <div ref={containerRef} className="relative flex flex-col md:flex-row w-full">
           {/* Fixed vertical thread, not overlapping navbar/footer */}
           <ThreadWithKnots />
           {/* Main content left-aligned, with more left margin to avoid thread overlap */}
@@ -58,6 +67,7 @@ const About = () => {
             skillsHeaderRef={skillsHeaderRef}
             educationHeaderRef={educationHeaderRef}
             awardsHeaderRef={awardsHeaderRef}
+            gifKey={gifKey}
           />
         </div>
       </div>
@@ -80,33 +90,34 @@ function ThreadWithKnots() {
 }
 
 // Main content with refs for each section
-function MainContentWithRefs({ introRef, summaryHeaderRef, skillsHeaderRef, educationHeaderRef, awardsHeaderRef }) {
+function MainContentWithRefs({ introRef, summaryHeaderRef, skillsHeaderRef, educationHeaderRef, awardsHeaderRef, gifKey }) {
   return (
-    <div className="w-full max-w-4xl mt-8 mb-8 ml-0 md:ml-32">
-      <div className="flex flex-col items-start" ref={introRef}>
+    <div className="w-full max-w-4xl mt-4 mb-8 mx-auto px-2 sm:px-4 md:px-0">
+      <div className="flex flex-col items-center sm:items-center md:items-start" ref={introRef}>
         <img
+          key={gifKey}
           src={profileMedia}
           alt="Profile"
-          className="w-32 h-32 rounded-full object-cover border-4 border-gray-700 shadow-lg mb-4 hover:scale-105 transition-transform duration-300"
+          className="w-24 h-24 xs:w-28 xs:h-28 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full object-cover border-4 border-gray-700 shadow-lg mb-4 hover:scale-105 transition-transform duration-300"
         />
-        <div className="flex flex-col items-start mb-10">
-          <span className="text-base md:text-lg text-gray-400 font-normal">Hey, I'm</span>
-          <span className="text-4xl md:text-5xl font-bold text-left tracking-tight drop-shadow-lg">Satyarth Ranjan</span>
+        <div className="flex flex-col items-center md:items-start mb-6 md:mb-10">
+          <span className="text-base xs:text-base sm:text-lg md:text-lg text-gray-400 font-normal">Hey, I'm</span>
+          <span className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-center md:text-left tracking-tight drop-shadow-lg">Satyarth Ranjan</span>
         </div>
       </div>
       {/* Info Sections - stacked vertically */}
-      <div className="flex flex-col gap-10">
+      <div className="flex flex-col gap-6 xs:gap-8 md:gap-10 w-full">
         {/* Professional Summary */}
         <div>
-          <h2 ref={summaryHeaderRef} className="text-xl font-semibold text-white mb-3 text-left uppercase tracking-wide">Professional Summary</h2>
-          <p className="text-base md:text-lg text-gray-400 text-left max-w-2xl leading-relaxed">
+          <h2 ref={summaryHeaderRef} className="text-base xs:text-lg md:text-xl font-semibold text-white mb-2 md:mb-3 text-left uppercase tracking-wide">Professional Summary</h2>
+          <p className="text-xs xs:text-sm sm:text-base md:text-lg text-gray-400 text-left max-w-full sm:max-w-2xl leading-relaxed">
             Passionate and versatile developer with a strong foundation in both web development and data science. Experienced in building responsive, user-centric web applications using modern frameworks and best practices. Skilled in extracting insights from data, developing predictive models, and communicating results to drive business value. Adept at collaborating in cross-functional teams, adapting to new technologies, and delivering solutions that bridge the gap between data and impactful user experiences.
           </p>
         </div>
         {/* Skills */}
         <div>
-          <h2 ref={skillsHeaderRef} className="text-xl font-semibold text-white mb-3 text-left uppercase tracking-wide">Skills</h2>
-          <ul className="text-gray-300 space-y-2 text-left">
+          <h2 ref={skillsHeaderRef} className="text-base xs:text-lg md:text-xl font-semibold text-white mb-2 md:mb-3 text-left uppercase tracking-wide">Skills</h2>
+          <ul className="text-gray-300 space-y-1 xs:space-y-2 text-left text-xs xs:text-sm md:text-base">
             <li><span className="font-medium">Web Development:</span> TypeScript, JavaScript, HTML, Node.js, Django, Prisma ORM, MongoDB</li>
             <li><span className="font-medium">Programming:</span> C++, Python, SQL</li>
             <li><span className="font-medium">Cloud & Database:</span> PostgreSQL, AWS</li>
@@ -117,15 +128,15 @@ function MainContentWithRefs({ introRef, summaryHeaderRef, skillsHeaderRef, educ
         </div>
         {/* Education */}
         <div>
-          <h2 ref={educationHeaderRef} className="text-xl font-semibold text-white mb-3 text-left uppercase tracking-wide">Education</h2>
-          <ul className="text-gray-300 space-y-2 text-left">
+          <h2 ref={educationHeaderRef} className="text-base xs:text-lg md:text-xl font-semibold text-white mb-2 md:mb-3 text-left uppercase tracking-wide">Education</h2>
+          <ul className="text-gray-300 space-y-1 xs:space-y-2 text-left text-xs xs:text-sm md:text-base">
             <li><span className="font-medium">B.E. Computer Science & Engineering</span><br/>Chandigarh University, Mohali (2021-2025)<br/>CGPA: 7.71</li>
           </ul>
         </div>
         {/* Awards */}
         <div>
-          <h2 ref={awardsHeaderRef} className="text-xl font-semibold text-white mb-3 text-left uppercase tracking-wide">Awards</h2>
-          <ul className="text-gray-300 space-y-2 text-left">
+          <h2 ref={awardsHeaderRef} className="text-base xs:text-lg md:text-xl font-semibold text-white mb-2 md:mb-3 text-left uppercase tracking-wide">Awards</h2>
+          <ul className="text-gray-300 space-y-1 xs:space-y-2 text-left text-xs xs:text-sm md:text-base">
             <li>Elite Plus Gold certificate from IIT Kharagpur (NPTEL exam, 92 marks)</li>
             <li>1st prize in drama competition (mime performance) at college cultural fest</li>
           </ul>

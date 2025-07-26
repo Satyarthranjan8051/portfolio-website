@@ -51,11 +51,11 @@ const Contact = () => {
     <div className="flex flex-col min-h-screen bg-main font-mono text-white">
       <Header />
       <Navbar />
-      <div className="flex-grow flex flex-col items-center justify-center px-2 py-12">
-        <h1 className="text-3xl font-bold mb-8 text-yellow-400 drop-shadow-lg">Contact</h1>
+      <div className="flex-grow flex flex-col items-center justify-center px-2 xs:px-4 sm:px-6 py-6 xs:py-8 sm:py-10 md:py-12">
+        <h1 className="text-2xl xs:text-3xl sm:text-4xl font-bold mb-4 sm:mb-8 text-yellow-400 drop-shadow-lg text-center">Contact</h1>
         <form
           onSubmit={handleSubmit}
-          className="w-full max-w-xl flex flex-col gap-6"
+          className="w-full max-w-xs xs:max-w-sm sm:max-w-md md:max-w-xl flex flex-col gap-4 xs:gap-5 sm:gap-6"
           autoComplete="off"
         >
           <input
@@ -64,7 +64,7 @@ const Contact = () => {
             value={form.name}
             onChange={handleChange}
             placeholder="Full Name"
-            className="bg-transparent border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-yellow-400 transition"
+            className="bg-transparent border border-gray-700 rounded-lg px-3 xs:px-4 py-2 xs:py-3 text-xs xs:text-sm sm:text-base text-white placeholder-gray-400 focus:outline-none focus:border-yellow-400 transition"
             required
           />
           <input
@@ -73,7 +73,7 @@ const Contact = () => {
             value={form.email}
             onChange={handleChange}
             placeholder="Email"
-            className="bg-transparent border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-yellow-400 transition"
+            className="bg-transparent border border-gray-700 rounded-lg px-3 xs:px-4 py-2 xs:py-3 text-xs xs:text-sm sm:text-base text-white placeholder-gray-400 focus:outline-none focus:border-yellow-400 transition"
             required
           />
           <input
@@ -82,7 +82,7 @@ const Contact = () => {
             value={form.title}
             onChange={handleChange}
             placeholder="Subject"
-            className="bg-transparent border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-yellow-400 transition"
+            className="bg-transparent border border-gray-700 rounded-lg px-3 xs:px-4 py-2 xs:py-3 text-xs xs:text-sm sm:text-base text-white placeholder-gray-400 focus:outline-none focus:border-yellow-400 transition"
             required
           />
           <textarea
@@ -90,13 +90,13 @@ const Contact = () => {
             value={form.message}
             onChange={handleChange}
             placeholder="Message"
-            rows={4}
-            className="bg-transparent border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-yellow-400 transition resize-none"
+            className="bg-transparent border border-gray-700 rounded-lg px-3 xs:px-4 py-2 xs:py-3 text-xs xs:text-sm sm:text-base text-white placeholder-gray-400 focus:outline-none focus:border-yellow-400 transition resize-none"
+            rows={5}
             required
-          ></textarea>
+          />
           <button
             type="submit"
-            className="w-full bg-white text-black font-semibold py-3 rounded-xl mt-2 text-lg hover:bg-yellow-400 transition-colors duration-200"
+            className="w-full bg-white text-black font-semibold py-2 xs:py-3 rounded-xl mt-2 text-base xs:text-lg hover:bg-yellow-400 transition-colors duration-200"
             disabled={loading}
           >
             {loading ? "Sending..." : "Submit"}
@@ -104,8 +104,8 @@ const Contact = () => {
           {success && <div className="text-green-400 text-center mt-2">{success}</div>}
           {error && <div className="text-red-400 text-center mt-2">{error}</div>}
         </form>
+      </div>
     </div>
-  </div>
   );
 };
 
