@@ -1,4 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
+/* Custom logo styles */
+.mylogo { 
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.15));
+  transition: transform 0.2s;
+}
+.mylogo:hover {
+  transform: scale(1.08) rotate(-3deg);
+}
+.mylogo-bg {
+  fill: #facc15; /* Tailwind yellow-400 */
+  stroke: #18181b; /* Tailwind zinc-900 */
+  stroke-width: 3;
+}
+.mylogo-text {
+  fill: #18181b;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
