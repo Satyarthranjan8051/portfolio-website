@@ -35,7 +35,7 @@ const Projects = () => {
             <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
               <span className="text-lg xs:text-xl font-semibold text-blue-300">Portfolio Website</span>
               <a href="https://github.com/SatyarthRanjan8051/portfolio-website" target="_blank" rel="noopener noreferrer" className="sm:ml-2 text-gray-400 hover:text-blue-400 underline text-xs xs:text-sm">GitHub</a>
-              <a href="/" className="sm:ml-2 text-gray-400 hover:text-green-400 underline text-xs xs:text-sm">Live</a>
+              <a href="https://portfolio-website-satyarth-ranjans-projects.vercel.app/" target="_blank" rel="noopener noreferrer" className="sm:ml-2 text-gray-400 hover:text-green-400 underline text-xs xs:text-sm">Live</a>
             </div>
             <p className="text-gray-300 text-xs xs:text-sm sm:text-base">Personal portfolio website built with React and Tailwind CSS, showcasing projects, skills, and experience in web development and data science.</p>
             <div className="flex flex-wrap gap-1 xs:gap-2 mt-1">
@@ -63,6 +63,7 @@ const Projects = () => {
             <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
               <span className="text-lg xs:text-xl font-semibold text-blue-300">SunLight Lamp Website</span>
               <a href="https://github.com/Satyarthranjan8051/lamp-website-react" target="_blank" rel="noopener noreferrer" className="sm:ml-2 text-gray-400 hover:text-blue-400 underline text-xs xs:text-sm">GitHub</a>
+              <a href="https://sunlight-ecommerce-website.vercel.app/" target="_blank" rel="noopener noreferrer" className="sm:ml-2 text-gray-400 hover:text-green-400 underline text-xs xs:text-sm">Live</a>
             </div>
             <p className="text-gray-300 text-xs xs:text-sm sm:text-base">A modern e-commerce web application for lamp and lighting products, featuring a responsive React frontend with Vite and Tailwind CSS, and a Node.js/Express backend. The project includes a multi-step checkout flow, product showcase, Swiper carousel, dark/light theme switching, newsletter subscription, and file-based order management. Backend APIs support product listing, order placement, and newsletter signup, with JWT authentication for user-specific features.</p>
             <div className="flex flex-wrap gap-1 xs:gap-2 mt-1">
