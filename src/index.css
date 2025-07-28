@@ -4,6 +4,26 @@
 @tailwind components;
 @tailwind utilities;
 
+html.light {
+  --color-bg-primary: #ffffff;
+  --color-text-primary: #1f2937;
+  --color-card-bg: #f3f4f6;
+  --color-card-border: #e5e7eb;
+}
+
+html.dark {
+  --color-bg-primary: #1f2937;
+  --color-text-primary: #f3f4f6;
+  --color-card-bg: #374151;
+  --color-card-border: #4b5563;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 /* Custom logo styles */
 .mylogo { 
   filter: drop-shadow(0 2px 8px rgba(0,0,0,0.15));

@@ -1,11 +1,10 @@
-import React from "react";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 
 const ResumePage = () => {
   return (
-    <div className="flex flex-col min-h-screen overflow-x-hidden w-full bg-gradient-to-br from-gray-900 to-gray-800 text-white font-sans">
+    <div className="flex flex-col min-h-screen overflow-x-hidden w-full bg-[var(--color-bg-primary)] text-[var(--color-text-primary)] font-sans">
       <Header />
       <Navbar />
       <div className="flex-grow flex flex-col items-center justify-center py-12 px-4 sm:px-6">
@@ -21,7 +20,7 @@ const ResumePage = () => {
             Download Resume
           </a>
         </div>
-        <div className="w-full max-w-4xl bg-white/10 backdrop-blur-lg rounded-2xl shadow-2xl overflow-hidden border-4 border-gray-700" style={{ height: '80vh' }}>
+        <div className="w-full max-w-4xl bg-[var(--color-card-bg)]/10 backdrop-blur-lg rounded-2xl shadow-2xl overflow-hidden border-4 border-[var(--color-card-border)]" style={{ height: '80vh' }}>
           <iframe
             id="resume-iframe"
             src="https://drive.google.com/file/d/17i_7uHh7Qr745wXfKryrKyp8RnNuxdEO/preview"

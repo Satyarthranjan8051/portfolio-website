@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const HomePage = () => {
   return (
-    <div className="flex flex-col min-h-screen overflow-x-hidden w-full bg-gradient-to-br from-gray-900 to-gray-800 text-white font-sans">
+    <div className="flex flex-col min-h-screen overflow-x-hidden w-full bg-[var(--color-bg-primary)] text-[var(--color-text-primary)] font-sans">
       {/* Header Section */}
       <Header />
 
@@ -17,14 +17,14 @@ const HomePage = () => {
       <div className="flex-grow flex items-center justify-center w-full min-h-screen">
         <div className="relative w-full max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8 px-4 py-8">
           {/* Glassmorphism container */}
-          <div className="w-full bg-white/10 backdrop-blur-lg rounded-2xl shadow-2xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-8">
+          <div className="w-full bg-[var(--color-card-bg)]/10 backdrop-blur-lg rounded-2xl shadow-2xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-8">
             {/* Hero section content */}
             <div className="flex flex-col items-center md:items-start justify-center flex-1 text-center md:text-left">
-              <p className="text-lg sm:text-xl text-gray-400 mb-2">Hello, I'm</p>
+              <p className="text-lg sm:text-xl text-[var(--color-text-primary)]/70 mb-2">Hello, I&apos;m</p>
               <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold mb-4 tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">
                 Satyarth Ranjan
               </h1>
-              <p className="text-md sm:text-lg text-gray-300 mb-8 max-w-full sm:max-w-2xl">
+              <p className="text-md sm:text-lg text-[var(--color-text-primary)]/80 mb-8 max-w-full sm:max-w-2xl">
                 Web Developer & Data Scientist passionate about building impactful digital experiences and extracting insights from data.
               </p>
               {/* Expertise Highlights */}
@@ -55,7 +55,7 @@ const HomePage = () => {
               <img
                 src={webDevImage}
                 alt="Web Developer"
-                className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 object-cover rounded-full shadow-2xl border-4 border-gray-700"
+                className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 object-cover rounded-full shadow-2xl border-4 border-[var(--color-card-border)]"
               />
             </div>
           </div>

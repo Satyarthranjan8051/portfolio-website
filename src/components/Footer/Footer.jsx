@@ -1,4 +1,3 @@
-import React from "react";
 import { FaLinkedin, FaInstagram, FaGithub } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
@@ -34,13 +33,13 @@ const Footer = () => {
 
   return (
     <footer
-      className="bg-white/10 backdrop-blur-lg text-white py-4 border-t border-gray-800/60 w-full z-50"
+      className="bg-[var(--color-card-bg)]/10 backdrop-blur-lg text-[var(--color-text-primary)] py-4 border-t border-[var(--color-card-border)]/60 w-full z-50"
       role="contentinfo"
     >
       <div className="container mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-y-4">
         {/* Copyright Notice */}
         <div className="text-center sm:text-left">
-          <p className="text-sm text-gray-300">
+          <p className="text-sm text-[var(--color-text-primary)]/70">
             &copy; {currentYear} Satyarth Ranjan. All Rights Reserved.
           </p>
         </div>

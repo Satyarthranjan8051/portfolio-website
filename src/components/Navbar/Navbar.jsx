@@ -1,10 +1,10 @@
-import { Link, useLocation } from "react-router-dom"; // Import Link and useLocation from react-router-dom
+import { Link, useLocation } from "react-router-dom";
+import { useTheme } from "../../context/ThemeContext";
 
 const Navbar = () => {
-  // Use useLocation to access the current route
   const location = useLocation();
+  const { theme, toggleTheme } = useTheme();
 
-  // Array of file options and corresponding routes
   const files = [
     { name: "index.html", path: "/" },
     { name: "about.css", path: "/about" },
@@ -33,6 +33,12 @@ const Navbar = () => {
             )}
           </Link>
         ))}
+        <button
+          onClick={toggleTheme}
+          className="ml-auto px-3 sm:px-4 py-2 text-xs sm:text-base text-white bg-gray-700 hover:bg-gray-600 rounded-md transition duration-200"
+        >
+          {theme === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode'}
+        </button>
       </div>
     </nav>
   );

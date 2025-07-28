@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import Navbar from "../components/Navbar/Navbar";
 import Header from "../components/Header/Header";
@@ -36,11 +36,11 @@ const Contact = () => {
       "_HYTcFWCu0FIyp30d" // Your Public Key
     )
       .then(
-        (result) => {
+        (_) => {
           setSuccess("Thank you for reaching out! Your message has been sent.");
           setForm({ name: "", email: "", title: "", message: "" });
         },
-        (error) => {
+        (_) => {
           setError("Sorry, there was an error sending your message. Please try again later.");
         }
       )
@@ -48,13 +48,13 @@ const Contact = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen overflow-x-hidden w-full bg-gradient-to-br from-gray-900 to-gray-800 text-white font-sans">
+    <div className="flex flex-col min-h-screen overflow-x-hidden w-full bg-[var(--color-bg-primary)] text-[var(--color-text-primary)] font-sans">
       <Header />
       <Navbar />
       <div className="flex-grow flex items-center justify-center w-full min-h-screen">
         <div className="relative w-full max-w-2xl mx-auto">
           {/* Glassmorphism container */}
-          <div className="w-full bg-white/10 backdrop-blur-lg rounded-2xl shadow-2xl p-8 md:p-12">
+          <div className="w-full bg-[var(--color-card-bg)]/10 backdrop-blur-lg rounded-2xl shadow-2xl p-8 md:p-12">
             <h1 className="text-4xl font-bold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">Contact Me</h1>
             <form
               onSubmit={handleSubmit}
@@ -67,7 +67,7 @@ const Contact = () => {
                 value={form.name}
                 onChange={handleChange}
                 placeholder="Full Name"
-                className="bg-transparent border-b-2 border-gray-500 rounded-none px-4 py-3 text-lg text-white placeholder-gray-400 focus:outline-none focus:border-yellow-400 transition duration-300"
+                className="bg-transparent border-b-2 border-[var(--color-card-border)] rounded-none px-4 py-3 text-lg text-[var(--color-text-primary)] placeholder-[var(--color-text-primary)]/70 focus:outline-none focus:border-yellow-400 transition duration-300"
                 required
               />
               <input
@@ -76,7 +76,7 @@ const Contact = () => {
                 value={form.email}
                 onChange={handleChange}
                 placeholder="Email"
-                className="bg-transparent border-b-2 border-gray-500 rounded-none px-4 py-3 text-lg text-white placeholder-gray-400 focus:outline-none focus:border-yellow-400 transition duration-300"
+                className="bg-transparent border-b-2 border-[var(--color-card-border)] rounded-none px-4 py-3 text-lg text-[var(--color-text-primary)] placeholder-[var(--color-text-primary)]/70 focus:outline-none focus:border-yellow-400 transition duration-300"
                 required
               />
               <input
@@ -85,7 +85,7 @@ const Contact = () => {
                 value={form.title}
                 onChange={handleChange}
                 placeholder="Subject"
-                className="bg-transparent border-b-2 border-gray-500 rounded-none px-4 py-3 text-lg text-white placeholder-gray-400 focus:outline-none focus:border-yellow-400 transition duration-300"
+                className="bg-transparent border-b-2 border-[var(--color-card-border)] rounded-none px-4 py-3 text-lg text-[var(--color-text-primary)] placeholder-[var(--color-text-primary)]/70 focus:outline-none focus:border-yellow-400 transition duration-300"
                 required
               />
               <textarea
@@ -93,7 +93,7 @@ const Contact = () => {
                 value={form.message}
                 onChange={handleChange}
                 placeholder="Message"
-                className="bg-transparent border-b-2 border-gray-500 rounded-none px-4 py-3 text-lg text-white placeholder-gray-400 focus:outline-none focus:border-yellow-400 transition duration-300 resize-none"
+                className="bg-transparent border-b-2 border-[var(--color-card-border)] rounded-none px-4 py-3 text-lg text-[var(--color-text-primary)] placeholder-[var(--color-text-primary)]/70 focus:outline-none focus:border-yellow-400 transition duration-300 resize-none"
                 rows={5}
                 required
               />

@@ -45,20 +45,20 @@ const projects = [
 
 const Projects = () => {
   return (
-    <div className="flex flex-col min-h-screen overflow-x-hidden w-full bg-gradient-to-br from-gray-900 to-gray-800 text-white font-sans">
+    <div className="flex flex-col min-h-screen overflow-x-hidden w-full bg-[var(--color-bg-primary)] text-[var(--color-text-primary)] font-sans">
       <Header />
       <Navbar />
       <div className="flex-grow flex flex-col items-center justify-start min-h-screen px-4 sm:px-6 py-12">
         <h1 className="text-4xl sm:text-5xl font-bold mb-12 text-center text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">My Projects</h1>
         <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20" style={{ gridAutoRows: '1fr' }}>
           {projects.map((project, index) => (
-            <div key={index} className="bg-white/10 backdrop-blur-lg rounded-2xl shadow-2xl p-6 flex flex-col justify-between transform hover:scale-105 transition-all duration-300">
+            <div key={index} className="bg-[var(--color-card-bg)]/10 backdrop-blur-lg rounded-2xl shadow-2xl p-6 flex flex-col justify-between transform hover:scale-105 transition-all duration-300">
               <div>
                 <h2 className="text-2xl font-bold text-yellow-400 mb-4">{project.title}</h2>
-                <p className="text-gray-300 mb-6 text-lg">{project.description}</p>
+                <p className="text-[var(--color-text-primary)]/80 mb-6 text-lg">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tags.map((tag, i) => (
-                    <span key={i} className="bg-gray-700/50 text-gray-300 px-3 py-1 rounded-full text-sm font-semibold">{tag}</span>
+                    <span key={i} className="bg-[var(--color-card-bg)]/50 text-[var(--color-text-primary)]/70 px-3 py-1 rounded-full text-sm font-semibold">{tag}</span>
                   ))}
                 </div>
               </div>
