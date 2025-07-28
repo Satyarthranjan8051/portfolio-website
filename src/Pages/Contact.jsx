@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 import Navbar from "../components/Navbar/Navbar";
@@ -48,62 +47,67 @@ const Contact = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-main font-mono text-white">
+    <div className="flex flex-col min-h-screen overflow-x-hidden w-full bg-gradient-to-br from-gray-900 to-gray-800 text-white font-sans">
       <Header />
       <Navbar />
-      <div className="flex-grow flex flex-col items-center justify-center px-2 xs:px-4 sm:px-6 py-6 xs:py-8 sm:py-10 md:py-12">
-        <h1 className="text-2xl xs:text-3xl sm:text-4xl font-bold mb-4 sm:mb-8 text-yellow-400 drop-shadow-lg text-center">Contact</h1>
-        <form
-          onSubmit={handleSubmit}
-          className="w-full max-w-xs xs:max-w-sm sm:max-w-md md:max-w-xl flex flex-col gap-4 xs:gap-5 sm:gap-6"
-          autoComplete="off"
-        >
-          <input
-            type="text"
-            name="name"
-            value={form.name}
-            onChange={handleChange}
-            placeholder="Full Name"
-            className="bg-transparent border border-gray-700 rounded-lg px-3 xs:px-4 py-2 xs:py-3 text-xs xs:text-sm sm:text-base text-white placeholder-gray-400 focus:outline-none focus:border-yellow-400 transition"
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            value={form.email}
-            onChange={handleChange}
-            placeholder="Email"
-            className="bg-transparent border border-gray-700 rounded-lg px-3 xs:px-4 py-2 xs:py-3 text-xs xs:text-sm sm:text-base text-white placeholder-gray-400 focus:outline-none focus:border-yellow-400 transition"
-            required
-          />
-          <input
-            type="text"
-            name="title"
-            value={form.title}
-            onChange={handleChange}
-            placeholder="Subject"
-            className="bg-transparent border border-gray-700 rounded-lg px-3 xs:px-4 py-2 xs:py-3 text-xs xs:text-sm sm:text-base text-white placeholder-gray-400 focus:outline-none focus:border-yellow-400 transition"
-            required
-          />
-          <textarea
-            name="message"
-            value={form.message}
-            onChange={handleChange}
-            placeholder="Message"
-            className="bg-transparent border border-gray-700 rounded-lg px-3 xs:px-4 py-2 xs:py-3 text-xs xs:text-sm sm:text-base text-white placeholder-gray-400 focus:outline-none focus:border-yellow-400 transition resize-none"
-            rows={5}
-            required
-          />
-          <button
-            type="submit"
-            className="w-full bg-white text-black font-semibold py-2 xs:py-3 rounded-xl mt-2 text-base xs:text-lg hover:bg-yellow-400 transition-colors duration-200"
-            disabled={loading}
-          >
-            {loading ? "Sending..." : "Submit"}
-          </button>
-          {success && <div className="text-green-400 text-center mt-2">{success}</div>}
-          {error && <div className="text-red-400 text-center mt-2">{error}</div>}
-        </form>
+      <div className="flex-grow flex items-center justify-center w-full min-h-screen">
+        <div className="relative w-full max-w-2xl mx-auto">
+          {/* Glassmorphism container */}
+          <div className="w-full bg-white/10 backdrop-blur-lg rounded-2xl shadow-2xl p-8 md:p-12">
+            <h1 className="text-4xl font-bold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">Contact Me</h1>
+            <form
+              onSubmit={handleSubmit}
+              className="flex flex-col gap-6"
+              autoComplete="off"
+            >
+              <input
+                type="text"
+                name="name"
+                value={form.name}
+                onChange={handleChange}
+                placeholder="Full Name"
+                className="bg-transparent border-b-2 border-gray-500 rounded-none px-4 py-3 text-lg text-white placeholder-gray-400 focus:outline-none focus:border-yellow-400 transition duration-300"
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                value={form.email}
+                onChange={handleChange}
+                placeholder="Email"
+                className="bg-transparent border-b-2 border-gray-500 rounded-none px-4 py-3 text-lg text-white placeholder-gray-400 focus:outline-none focus:border-yellow-400 transition duration-300"
+                required
+              />
+              <input
+                type="text"
+                name="title"
+                value={form.title}
+                onChange={handleChange}
+                placeholder="Subject"
+                className="bg-transparent border-b-2 border-gray-500 rounded-none px-4 py-3 text-lg text-white placeholder-gray-400 focus:outline-none focus:border-yellow-400 transition duration-300"
+                required
+              />
+              <textarea
+                name="message"
+                value={form.message}
+                onChange={handleChange}
+                placeholder="Message"
+                className="bg-transparent border-b-2 border-gray-500 rounded-none px-4 py-3 text-lg text-white placeholder-gray-400 focus:outline-none focus:border-yellow-400 transition duration-300 resize-none"
+                rows={5}
+                required
+              />
+              <button
+                type="submit"
+                className="w-full bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-400 hover:to-orange-400 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 text-lg text-center"
+                disabled={loading}
+              >
+                {loading ? "Sending..." : "Submit"}
+              </button>
+              {success && <div className="text-green-400 text-center mt-4 text-lg">{success}</div>}
+              {error && <div className="text-red-400 text-center mt-4 text-lg">{error}</div>}
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   );

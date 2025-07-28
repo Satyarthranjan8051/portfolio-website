@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans : ['"Fira Code"', 'monospace'], // Correctly defining the font family
+        sans : ['Inter', 'sans-serif'], // Correctly defining the font family
       },
       colors: {
         main: '#1f1f1e',
@@ -15,6 +15,15 @@ export default {
         navbarNotselected: '#2d2c2d',
         header: '#3c3c3c',
         customyellow: '#9e7b31',
+      },
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+      },
+      animation: {
+        float: 'float 3s ease-in-out infinite',
       },
     },
   },
