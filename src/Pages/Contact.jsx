@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 import Navbar from "../components/Navbar/Navbar";
 import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
 
 const Contact = () => {
   const [form, setForm] = useState({
@@ -109,6 +110,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
