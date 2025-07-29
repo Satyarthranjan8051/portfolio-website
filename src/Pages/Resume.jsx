@@ -11,7 +11,7 @@ const ResumePage = () => {
         <h1 className="text-4xl sm:text-5xl font-bold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">My Resume</h1>
         <div className="flex flex-col sm:flex-row gap-4 mb-8">
           <a
-            href="https://drive.google.com/uc?export=download&id=17i_7uHh7Qr745wXfKryrKyp8RnNuxdEO"
+            href="/SatyarthRanjan%20new%20resume.pdf"
             className="inline-block w-full sm:w-auto bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-400 hover:to-teal-400 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 text-lg text-center"
             download
             target="_blank"
@@ -23,7 +23,7 @@ const ResumePage = () => {
         <div className="w-full max-w-4xl bg-[var(--color-card-bg)]/10 backdrop-blur-lg rounded-2xl shadow-2xl overflow-hidden border-4 border-[var(--color-card-border)]" style={{ height: '80vh' }}>
           <iframe
             id="resume-iframe"
-            src="https://drive.google.com/file/d/17i_7uHh7Qr745wXfKryrKyp8RnNuxdEO/preview"
+            src="/SatyarthRanjan%20new%20resume.pdf"
             title="Resume"
             width="100%"
             height="100%"
